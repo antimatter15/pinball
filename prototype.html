@@ -21,25 +21,20 @@
   </head>
   <body>
     <canvas id="arena" width="350" height="500"></canvas>
-    <script src="prototype.js"></script>
     <script>
-    ball = [20, 20]
-velo = [1, 10]
-gravity = 1
-line = [10, 300, 90, 400]
+      window.requestAnimFrame = (function(){
+        return  window.requestAnimationFrame       || 
+                window.webkitRequestAnimationFrame || 
+                window.mozRequestAnimationFrame    || 
+                window.oRequestAnimationFrame      || 
+                window.msRequestAnimationFrame     || 
+                function( callback ){
+                  window.setTimeout(callback, 1000 / 60);
+                };
+      })();
 
-x = (line[1]*velo[0]*velo[0])/(gravity*line[0] - gravity*line[2]) - (
-line[3]*velo[0]*velo[0])/(gravity*line[0] - gravity*line[2]) - (
-line[0]*velo[0]*velo[1])/(gravity*line[0] - gravity*line[2]) + (
-line[2]*velo[0]*velo[1])/(
-gravity*line[0] - 
-gravity*line[2]) - (velo[0]*Math.sqrt(-4*(gravity*line[0] - 
-gravity*line[2])*(2*ball[1]*line[0] - 2*line[0]*line[1] + 
-2*line[1]*line[1] - 2* ball[1]*line[2] + 2*line[1]*line[2] - 
-2*line[1]*line[3]) + Math.pow(-2*line[1]*velo[0] + 
-2*line[3]*velo[0] + 2*line[0]*velo[1] - 
-2*line[2]*velo[1],2)))/(2*(gravity*line[0] - 
-gravity*line[2]))
     </script>
+    <script src="prototype.js"></script>
+
   </body>
 </html> 
