@@ -188,9 +188,13 @@
 
   epoch = +(new Date);
 
-  this.timecoef = 1;
+  this.timecoef = 10;
 
   this.baseline = 0;
+
+  document.getElementById('speed').onchange = function() {
+    return setSpeed(document.getElementById('speed').value);
+  };
 
   this.setSpeed = function(speed) {
     var t;
@@ -213,7 +217,6 @@
     t = timecoef * (new Date - epoch) / 1000;
     y = 0.5 * gravity * t * t + velo[1] * t + ball[1];
     x = t * velo[0] + ball[0];
-    predict();
     if (t >= t_end) {
       t = t_end;
       y = 0.5 * gravity * t * t + velo[1] * t + ball[1];
@@ -221,6 +224,7 @@
       epoch = +(new Date);
       velo = new_velo;
       ball = new_ball;
+      predict();
     }
     ctx.beginPath();
     ctx.moveTo(x + radius, y);

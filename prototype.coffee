@@ -219,7 +219,7 @@ epoch = +new Date
 @timecoef = 10
 @baseline = 0
 
- document.getElementById('speed').onchange = ->
+document.getElementById('speed').onchange = ->
  	setSpeed(document.getElementById('speed').value)
 
 @setSpeed = (speed) ->
