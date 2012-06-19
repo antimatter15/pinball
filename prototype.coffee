@@ -216,11 +216,11 @@ console.log t###
 
 absepoch = +new Date
 epoch = +new Date
-@timecoef = 1
+@timecoef = 10
 @baseline = 0
 
-# document.getElementById('speed').onchange = ->
-# 	setSpeed(document.getElementById('speed').value)
+ document.getElementById('speed').onchange = ->
+ 	setSpeed(document.getElementById('speed').value)
 
 @setSpeed = (speed) ->
 	t = timecoef * (new Date - epoch) / 1000
