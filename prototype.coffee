@@ -245,7 +245,7 @@ render = ->
 	
 	y = 0.5 * gravity * t * t + velo[1] * t + ball[1]
 	x = t * velo[0] + ball[0]
-	predict()
+	#predict()
 	#unless 0 < x < 500 or 0 < y < 500
 	#	console.log new Date - absepoch
 
@@ -257,7 +257,7 @@ render = ->
 		epoch = +new Date
 		velo = new_velo
 		ball = new_ball
-		#predict()
+		predict()
 	#console.log t_end
 	#console.log x, y
 	ctx.beginPath()
